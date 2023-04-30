@@ -83,7 +83,7 @@ bcftools stats simulated.call.vcf > simulated.call.stats
 
 # Visualize vcf files and aligments in IGV
 
-# Compare real dataseq to ground truth
+# Compare simulated reads calls to ground truth
 parallel -j 2 "bgzip {}" ::: *.call.vcf # bgzip vcf files
 parallel -j 2 "bcftools index {}" ::: *.call.vcf.gz
 parallel -j 2 "tabix {}" ::: *.call.vcf.gz
